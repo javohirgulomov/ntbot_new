@@ -1,44 +1,66 @@
-from aiogram import Router, F, types
-from keyboards.default.menu import courses_menu, contacts_menu, main_menu
+from aiogram import Router, F
+from aiogram.types import Message
+
+from keyboards.default.user import user_main_menu, courses_menu, contacts_menu
 
 router = Router()
 
+@router.message(F.text.in_(["🎓 Courses", "🎓 Kurslar", "🎓 Курсы"]))
+async def courses_handler(message: Message, _):
+    text = _("Select a course:")
+    await message.answer(text, reply_markup=await courses_menu(_))
 
-@router.message(F.text == "📚 Courses")
-async def show_courses_menu(message: types.Message):
-    await message.answer("Select a course to learn more:", reply_markup=courses_menu)
+@router.message(F.text.in_(["🎉 Events", "🎉 Tadbirlar", "🎉 События"]))
+async def events_handler(message: Message, _):
+    text = _("Here are the upcoming events:")
+    await message.answer(text)
 
-@router.message(F.text == "📞 Contacts")
-async def show_contacts_menu(message: types.Message):
-    await message.answer("Select a branch for contact info:", reply_markup=contacts_menu)
+@router.message(F.text.in_(["☎️ Contacts", "☎️ Aloqa", "☎️ Контакты"]))
+async def contact_handler(message: Message, _):
+    text = _("Select a branch:")
+    await message.answer(text, reply_markup=await contacts_menu(_))
 
-@router.message(F.text == "🔙 Back to Main Menu")
-async def go_back_main(message: types.Message):
-    await message.answer("Main Menu:", reply_markup=main_menu)
+@router.message(F.text.in_(["⚙️ Settings", "⚙️ Sozlamalar", "⚙️ Настройки"]))
+async def settings_handler(message: Message, _):
+    text = _("Settings menu (coming soon)")
+    await message.answer(text)
 
+@router.message(F.text.in_(["⬅ Back", "⬅ Ortga", "⬅ Назад"]))
+async def back_handler(message: Message, _):
+    text = _("Main menu")
+    await message.answer(text, reply_markup=await user_main_menu(_))
 
-@router.message(F.text == "📱 Frontend Development")
-async def frontend_info(message: types.Message):
-    await message.answer("<b>📱 Frontend Development</b>\n\nLearn React, HTML, CSS, and JavaScript.", parse_mode="HTML")
+@router.message(F.text.in_(["🐍 Python Backend"]))
+async def python_course_handler(message: Message, _):
+    text = _("Python Backend Development course details...")
+    await message.answer(text)
 
-@router.message(F.text == "💻 Backend Development")
-async def backend_info(message: types.Message):
-    await message.answer("<b>💻 Backend Development</b>\n\nLearn Python, Django, FastAPI, and PostgreSQL.", parse_mode="HTML")
+@router.message(F.text.in_(["🎨 UX/UI"]))
+async def uxui_course_handler(message: Message, _):
+    text = _("UX/UI Design course details...")
+    await message.answer(text)
 
-@router.message(F.text == "🎨 Graphic Design")
-async def design_info(message: types.Message):
-    await message.answer("<b>🎨 Graphic Design</b>\n\nLearn Figma, Photoshop, and UI/UX principles.", parse_mode="HTML")
+@router.message(F.text.in_(["📱 Android Dev"]))
+async def android_course_handler(message: Message, _):
+    text = _("Android Development course details...")
+    await message.answer(text)
 
+@router.message(F.text.in_(["💻 Frontend"]))
+async def frontend_course_handler(message: Message, _):
+    text = _("Frontend Development course details...")
+    await message.answer(text)
 
-@router.message(F.text == "📍 Chilonzor")
-async def chilonzor_contact(message: types.Message):
-    await message.answer("📞 <b>Chilonzor Branch:</b>\n+998 71 200 11 22", parse_mode="HTML")
+@router.message(F.text.in_(["📍 Chilonzor Branch"]))
+async def chilonzor_handler(message: Message, _):
+    text = _("Chilonzor Branch\nAddress: ...")
+    await message.answer(text)
 
-@router.message(F.text == "📍 Xadra")
-async def xadra_contact(message: types.Message):
-    await message.answer("📞 <b>Xadra Branch:</b>\n+998 71 200 33 44", parse_mode="HTML")
+@router.message(F.text.in_(["📍 Xadra Branch"]))
+async def xadra_handler(message: Message, _):
+    text = _("Xadra Branch\nAddress: ...")
+    await message.answer(text)
 
-@router.message(F.text == "📍 Olmazor")
-async def olmazor_contact(message: types.Message):
-    await message.answer("📞 <b>Olmazor Branch:</b>\n+998 71 200 55 66", parse_mode="HTML")
-
+@router.message(F.text.in_(["📍 Oybek Branch"]))
+async def oybek_handler(message: Message, _):
+    text = _("Oybek Branch\nAddress: ...")
+    await message.answer(text)

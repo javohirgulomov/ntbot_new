@@ -1,30 +1,28 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-main_menu = ReplyKeyboardMarkup(
-    keyboard=[
-        [KeyboardButton(text="📚 Courses")],
-        [KeyboardButton(text="📞 Contacts"), KeyboardButton(text="🎉 Events")],
-        [KeyboardButton(text="⚙️ Settings")]
-    ],
-    resize_keyboard=True
-)
+def get_main_menu(_):
+    return ReplyKeyboardMarkup(
+        keyboard=[
+            [KeyboardButton(text=_("🎓 Courses")), KeyboardButton(text=_("🎉 Events"))],
+            [KeyboardButton(text=_("☎ Contacts")), KeyboardButton(text=_("⚙ Settings"))],
+        ],
+        resize_keyboard=True
+    )
 
-courses_menu = ReplyKeyboardMarkup(
-    keyboard=[
-        [KeyboardButton(text="📱 Frontend Development")],
-        [KeyboardButton(text="💻 Backend Development")],
-        [KeyboardButton(text="🎨 Graphic Design")],
-        [KeyboardButton(text="🔙 Back to Main Menu")]
-    ],
-    resize_keyboard=True
-)
+def get_courses_menu(_):
+    return ReplyKeyboardMarkup(
+        keyboard=[
+            [KeyboardButton(text=_("📱 Frontend Development")), KeyboardButton(text=_("💻 Backend Development"))],
+            [KeyboardButton(text=_("🎨 Graphic Design")), KeyboardButton(text=_("🔙 Back to Main Menu"))]
+        ],
+        resize_keyboard=True
+    )
 
-contacts_menu = ReplyKeyboardMarkup(
-    keyboard=[
-        [KeyboardButton(text="📍 Chilonzor")],
-        [KeyboardButton(text="📍 Xadra")],
-        [KeyboardButton(text="📍 Olmazor")],
-        [KeyboardButton(text="🔙 Back to Main Menu")]
-    ],
-    resize_keyboard=True
-)
+def get_contacts_menu(_):
+    return ReplyKeyboardMarkup(
+        keyboard=[
+            [KeyboardButton(text=_("📍 Chilonzor")), KeyboardButton(text=_("📍 Xadra"))],
+            [KeyboardButton(text=_("📍 Olmazor")), KeyboardButton(text=_("🔙 Back to Main Menu"))]
+        ],
+        resize_keyboard=True
+    )

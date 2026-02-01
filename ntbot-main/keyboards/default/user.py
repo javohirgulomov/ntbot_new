@@ -1,45 +1,49 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-share_contact = ReplyKeyboardMarkup(
-    keyboard=[[
-        KeyboardButton(text="☎️ Share phone number", request_contact=True)
-    ]], resize_keyboard=True
-)
+async def share_contact(_):
+    return ReplyKeyboardMarkup(
+        keyboard=[[
+            KeyboardButton(text=_("☎️ Share phone number"), request_contact=True)
+        ]], resize_keyboard=True
+    )
 
-share_location = ReplyKeyboardMarkup(
-    keyboard=[[
-        KeyboardButton(text="📍 Share my location", request_location=True)
-    ]], resize_keyboard=True
-)
+async def share_location(_):
+    return ReplyKeyboardMarkup(
+        keyboard=[[
+            KeyboardButton(text=_("📍 Share my location"), request_location=True)
+        ]], resize_keyboard=True
+    )
 
-user_main_menu = ReplyKeyboardMarkup(
-    keyboard=[
-        [
-            KeyboardButton(text="🎓 Courses"),
-            KeyboardButton(text="🎉 Events"),
+async def user_main_menu(_):
+    return ReplyKeyboardMarkup(
+        keyboard=[
+            [
+                KeyboardButton(text=_("🎓 Courses")),
+                KeyboardButton(text=_("🎉 Events")),
+            ],
+            [
+                KeyboardButton(text=_("☎️ Contacts")),
+                KeyboardButton(text=_("⚙️ Settings")),
+            ]
+        ], resize_keyboard=True
+    )
+
+async def courses_menu(_):
+    return ReplyKeyboardMarkup(
+        keyboard=[
+            [KeyboardButton(text=_("🐍 Python Backend")), KeyboardButton(text=_("🎨 UX/UI"))],
+            [KeyboardButton(text=_("📱 Android Dev")), KeyboardButton(text=_("💻 Frontend"))],
+            [KeyboardButton(text=_("⬅ Back"))]
         ],
-        [
-            KeyboardButton(text="☎️ Contacts"),
-            KeyboardButton(text="⚙️ Settings"),
-        ]
-    ], resize_keyboard=True
-)
+        resize_keyboard=True
+    )
 
-
-courses_menu = ReplyKeyboardMarkup(
-    keyboard=[
-        [KeyboardButton(text="🐍 Python Backend"),KeyboardButton(text="🎨 UX/UI")],
-        [KeyboardButton(text="📱 Android Dev"), KeyboardButton(text="💻 Frontend")],
-        [KeyboardButton(text="⬅ Back")]
-    ],
-    resize_keyboard=True
-)
-
-contacts_menu = ReplyKeyboardMarkup(
-    keyboard=[
-        [KeyboardButton(text="📍 Chilonzor Branch"), KeyboardButton(text="📍 Xadra Branch")],
-        [KeyboardButton(text="📍 Oybek Branch")],
-        [KeyboardButton(text="⬅ Back")]
-    ],
-    resize_keyboard=True
-)
+async def contacts_menu(_):
+    return ReplyKeyboardMarkup(
+        keyboard=[
+            [KeyboardButton(text=_("📍 Chilonzor Branch")), KeyboardButton(text=_("📍 Xadra Branch"))],
+            [KeyboardButton(text=_("📍 Oybek Branch"))],
+            [KeyboardButton(text=_("⬅ Back"))]
+        ],
+        resize_keyboard=True
+    )

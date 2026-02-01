@@ -1,26 +1,20 @@
 import asyncio
 import logging
-
 from aiogram import Bot, Dispatcher, Router
-
 from core.config import BOT_TOKEN, DEVELOPER_ID
 from handlers import include_routers
+from middlewares.language import setup_middleware
 from utils.queries import create_tables
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
-
 router = Router()
 
 
-
-
 async def startup(bot: Bot):
-    # create tables
     await create_tables()
-
     text = "Bot start to work"
-    #await bot.send_message(chat_id=DEVELOPER_ID, text=text)
+    await bot.send_message(chat_id=DEVELOPER_ID, text=text)
 
 
 async def shutdown(bot: Bot):
@@ -29,6 +23,8 @@ async def shutdown(bot: Bot):
 
 
 async def main():
+    setup_middleware(dp)
+
     main_router = include_routers()
     dp.include_router(main_router)
 

@@ -1,0 +1,92 @@
+# Uzbek translations for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-02-01 14:59+0500\n"
+"PO-Revision-Date: 2026-02-01 14:59+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: uz\n"
+"Language-Team: uz <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ntbot-main/handlers/menu.py:15
+msgid "🌏 Please select the language that you want"
+msgstr "🌏 Iltimos, tilni tanlang"
+
+msgid "Hello, welcome back!"
+msgstr "Salom, qaytganingiz bilan!"
+
+msgid "Please enter your full name"
+msgstr "Iltimos, to'liq ismingizni kiriting"
+
+msgid "👇 Please enter your phone number by button on the below"
+msgstr "👇 Iltimos, quyidagi tugma orqali telefon raqamingizni kiriting"
+
+msgid "☎️ Share phone number"
+msgstr "☎️ Telefon raqamni ulashish"
+
+msgid "👇 Please enter your location by button on the below"
+msgstr "👇 Iltimos, quyidagi tugma orqali joylashuvingizni ulashing"
+
+msgid "📍 Share my location"
+msgstr "📍 Joylashuvni ulashish"
+
+msgid "✅ Successfully registered"
+msgstr "✅ Muvaffaqiyatli ro'yxatdan o'tdingiz"
+
+msgid "❌ Something went wrong, please try again later"
+msgstr "❌ Xatolik yuz berdi, keyinroq qayta urinib ko'ring"
+
+msgid "🎓 Courses"
+msgstr "🎓 Kurslar"
+
+msgid "🎉 Events"
+msgstr "🎉 Tadbirlar"
+
+msgid "Here are the upcoming events:"
+msgstr "Yaqinlashib kelayotgan tadbirlar:"
+
+msgid "☎️ Contacts"
+msgstr "☎️ Aloqa"
+
+msgid "⚙️ Settings"
+msgstr "⚙️ Sozlamalar"
+
+msgid "Select a course:"
+msgstr "Kursni tanlang:"
+
+msgid "Select a branch:"
+msgstr "Filialni tanlang:"
+
+msgid "🐍 Python Backend"
+msgstr "🐍 Python Backend"
+
+msgid "🎨 UX/UI"
+msgstr "🎨 UX/UI"
+
+msgid "📱 Android Dev"
+msgstr "📱 Android Dasturlash"
+
+msgid "💻 Frontend"
+msgstr "💻 Frontend"
+
+msgid "⬅ Back"
+msgstr "⬅ Ortga"
+
+msgid "📍 Chilonzor Branch"
+msgstr "📍 Chilonzor Filiali"
+
+msgid "📍 Xadra Branch"
+msgstr "📍 Xadra Filiali"
+
+msgid "📍 Oybek Branch"
+msgstr "📍 Oybek Filiali"
